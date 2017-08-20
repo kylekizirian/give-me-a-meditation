@@ -23,7 +23,6 @@ meditation_found = False
 meditation = ""
 
 for line in meditations_text:
-
     if "THE " + meditation_book[random_book_number - 1] + " BOOK" in line:
         book_found = True
 
@@ -33,7 +32,6 @@ for line in meditations_text:
     if meditation_found:
         if line == '\n':
             break
-
         meditation = meditation + line
 
 print(meditation)
