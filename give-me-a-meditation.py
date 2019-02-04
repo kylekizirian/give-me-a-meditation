@@ -43,7 +43,7 @@ if __name__ == '__main__':
 
     book_found = False
     meditation_found = False
-    meditation = None
+    meditation = ""
     roman_numerals = RomanNumerals()
 
     with open(file_path) as meditations_text:
