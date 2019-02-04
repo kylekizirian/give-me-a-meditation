@@ -1,8 +1,9 @@
 import os
 import random
 
-meditation_book = ["FIRST", "SECOND", "THIRD", "FOURTH", "FIFTH", "SIXTH", "SEVENTH", "EIGHTH", "NINTH", "TENTH",
-                   "ELEVENTH", "TWELFTH"]
+
+meditation_book = ["FIRST", "SECOND", "THIRD", "FOURTH", "FIFTH", "SIXTH",
+                   "SEVENTH", "EIGHTH", "NINTH", "TENTH", "ELEVENTH", "TWELFTH"]
 meditations_per_book = [17, 15, 17, 43, 33, 54, 44, 58, 43, 38, 31, 27]
 roman_numerals = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XII", "XIV", "XV", "XVI",
                   "XVII", "XVIII", "XIX", "XX", "XXI", "XXII", "XXIII", "XXIV", "XXV", "XXVI", "XXVII", "XXVIII",
@@ -10,7 +11,7 @@ roman_numerals = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "
                   "XL", "XLI", "XLII", "XLIII", "XLIV", "XLV", "XLVI", "XLVII", "XLVIII", "XLIX", "L", "LI", "LII",
                   "LIII", "LIV", "LV", "LVI", "LVII", "LVIII"]
 
-file_path = os.path.join(os.curdir, "meditations", "Meditations.txt")
+file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "meditations", "Meditations.txt")
 meditations_text = open(file_path)
 
 random_book_number = random.randint(1, 12)
