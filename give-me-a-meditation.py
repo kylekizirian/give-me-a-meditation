@@ -36,8 +36,6 @@ with open(file_path) as meditations_text:
 
     random_book_number = random.randint(1, 12)
     random_meditation_number = random.randint(1, meditations_per_book[random_book_number - 1])
-    print("Book " + str(random_book_number))
-    print("Meditation " + str(random_meditation_number) + "\n")
 
     book_found = False
     meditation_found = False
@@ -56,4 +54,6 @@ with open(file_path) as meditations_text:
                 break
             meditation = meditation + line
 
-    print(meditation)
+    print(f"Book {random_book_number}\n"
+          f"Meditation {random_meditation_number}\n\n"
+          f"{meditation}")
