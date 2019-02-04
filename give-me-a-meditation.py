@@ -60,6 +60,6 @@ if __name__ == '__main__':
                     break
                 meditation = meditation + line
 
-        print(f"Book {random_book_number}\n"
-              f"Meditation {random_meditation_number}\n\n"
-              f"{meditation}")
+    print(f"Book {random_book_number}\n"
+            f"Meditation {random_meditation_number}\n\n"
+            f"{meditation}")
