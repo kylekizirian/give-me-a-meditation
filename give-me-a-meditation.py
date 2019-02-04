@@ -31,29 +31,29 @@ class RomanNumerals:
         return self._roman_numerals[index - 1]
 
 file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "meditations", "Meditations.txt")
-meditations_text = open(file_path)
 
-random_book_number = random.randint(1, 12)
-random_meditation_number = random.randint(1, meditations_per_book[random_book_number - 1])
-print("Book " + str(random_book_number))
-print("Meditation " + str(random_meditation_number) + "\n")
+with open(file_path) as meditations_text:
 
-book_found = False
-meditation_found = False
-meditation = ""
-roman_numerals = RomanNumerals()
+    random_book_number = random.randint(1, 12)
+    random_meditation_number = random.randint(1, meditations_per_book[random_book_number - 1])
+    print("Book " + str(random_book_number))
+    print("Meditation " + str(random_meditation_number) + "\n")
 
-for line in meditations_text:
-    if "THE " + meditation_book[random_book_number - 1] + " BOOK" in line:
-        book_found = True
+    book_found = False
+    meditation_found = False
+    meditation = ""
+    roman_numerals = RomanNumerals()
 
-    if book_found and roman_numerals[random_meditation_number] + "." in line:
-        meditation_found = True
+    for line in meditations_text:
+        if "THE " + meditation_book[random_book_number - 1] + " BOOK" in line:
+            book_found = True
 
-    if meditation_found:
-        if line == '\n':
-            break
-        meditation = meditation + line
+        if book_found and roman_numerals[random_meditation_number] + "." in line:
+            meditation_found = True
 
-print(meditation)
-meditations_text.close()
+        if meditation_found:
+            if line == '\n':
+                break
+            meditation = meditation + line
+
+    print(meditation)
