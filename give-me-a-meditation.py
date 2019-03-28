@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import os
+from pathlib import Path
 import random
 
 
@@ -35,8 +35,8 @@ class RomanNumerals:
 
 if __name__ == '__main__':
 
-    this_dir = os.path.dirname(os.path.abspath(__file__))
-    file_path = os.path.join(this_dir, "meditations", "Meditations.txt")
+    this_dir = Path(__file__).resolve().parent
+    file_path = this_dir / "meditations" / "Meditations.txt"
 
     random_book_number = random.randint(1, 12)
     random_meditation_number = random.randint(1, meditations_per_book[random_book_number - 1])
@@ -60,6 +60,8 @@ if __name__ == '__main__':
                     break
                 meditation = meditation + line
 
-    print(f"Book {random_book_number}\n"
-            f"Meditation {random_meditation_number}\n\n"
-            f"{meditation}")
+    print(
+        f"Book {random_book_number}\n"
+        f"Meditation {random_meditation_number}\n\n"
+        f"{meditation}"
+    )
