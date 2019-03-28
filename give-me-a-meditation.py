@@ -4,8 +4,10 @@ from pathlib import Path
 import random
 
 
-meditation_book = ["FIRST", "SECOND", "THIRD", "FOURTH", "FIFTH", "SIXTH",
-                   "SEVENTH", "EIGHTH", "NINTH", "TENTH", "ELEVENTH", "TWELFTH"]
+meditation_book = [
+    "FIRST", "SECOND", "THIRD", "FOURTH", "FIFTH", "SIXTH",
+    "SEVENTH", "EIGHTH", "NINTH", "TENTH", "ELEVENTH", "TWELFTH"
+    ]
 meditations_per_book = [17, 15, 17, 43, 33, 54, 44, 58, 43, 38, 31, 27]
 
 
@@ -20,7 +22,7 @@ class RomanNumerals:
     """
 
     def __init__(self):
-        self._roman_numerals = [
+        self._roman_numerals: list = [
             "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI",
             "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX",
             "XXI", "XXII", "XXIII", "XXIV", "XXV", "XXVI", "XXVII", "XXVIII",
@@ -29,21 +31,21 @@ class RomanNumerals:
             "XLV", "XLVI", "XLVII", "XLVIII", "XLIX", "L", "LI", "LII", "LIII",
             "LIV", "LV", "LVI", "LVII", "LVIII"]
 
-    def __getitem__(self, index):
+    def __getitem__(self, index: int):
         return self._roman_numerals[index - 1]
 
 
 if __name__ == '__main__':
 
-    this_dir = Path(__file__).resolve().parent
-    file_path = this_dir / "meditations" / "Meditations.txt"
+    this_dir: Path = Path(__file__).resolve().parent
+    file_path: Path = this_dir / "meditations" / "Meditations.txt"
 
-    random_book_number = random.randint(1, 12)
-    random_meditation_number = random.randint(1, meditations_per_book[random_book_number - 1])
+    random_book_number: int = random.randint(1, 12)
+    random_meditation_number: int = random.randint(1, meditations_per_book[random_book_number - 1])
 
-    book_found = False
-    meditation_found = False
-    meditation = ""
+    book_found: bool = False
+    meditation_found: bool = False
+    meditation: str = ""
     roman_numerals = RomanNumerals()
 
     with open(file_path) as meditations_text:
