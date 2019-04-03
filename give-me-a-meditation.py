@@ -51,10 +51,10 @@ if __name__ == '__main__':
     with open(file_path) as meditations_text:
 
         for line in meditations_text:
-            if "THE " + meditation_book[random_book_number - 1] + " BOOK" in line:
+            if f"THE {meditation_book[random_book_number - 1]} BOOK" in line:
                 book_found = True
 
-            if book_found and roman_numerals[random_meditation_number] + "." in line:
+            if book_found and f"{roman_numerals[random_meditation_number]}." in line:
                 meditation_found = True
 
             if meditation_found:
