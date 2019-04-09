@@ -7,7 +7,7 @@ import random
 meditation_book = [
     "FIRST", "SECOND", "THIRD", "FOURTH", "FIFTH", "SIXTH",
     "SEVENTH", "EIGHTH", "NINTH", "TENTH", "ELEVENTH", "TWELFTH"
-    ]
+]
 meditations_per_book = [17, 15, 17, 43, 33, 54, 44, 58, 43, 38, 31, 27]
 
 
@@ -29,7 +29,8 @@ class RomanNumerals:
             "XXIX", "XXX", "XXXI", "XXXII", "XXXIII", "XXXIV", "XXXV", "XXXVI",
             "XXXVII", "XXXVIII", "XXXIX", "XL", "XLI", "XLII", "XLIII", "XLIV",
             "XLV", "XLVI", "XLVII", "XLVIII", "XLIX", "L", "LI", "LII", "LIII",
-            "LIV", "LV", "LVI", "LVII", "LVIII"]
+            "LIV", "LV", "LVI", "LVII", "LVIII"
+        ]
 
     def __getitem__(self, index: int):
         return self._roman_numerals[index - 1]
